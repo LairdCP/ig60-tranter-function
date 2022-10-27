@@ -1,0 +1,14 @@
+{
+  "bindings": [
+    {
+      "type": "eventHubTrigger",
+      "name": "IoTHubMessages",
+      "direction": "in",
+      "eventHubName": "iothub-ehub-canvas-hub-21697529-881f7d7818",
+      "connection": "tranterdev_RootManageSharedAccessKey_EVENTHUB",
+      "cardinality": "many",
+      "consumerGroup": "$Default",
+      "dataType": "string"
+    }
+  ]
+}

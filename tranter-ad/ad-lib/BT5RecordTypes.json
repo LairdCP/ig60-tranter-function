@@ -1,0 +1,181 @@
+{
+  "recordTypes": [
+    {
+      "name": "reserved",
+      "summary": "reserved type",
+      "x-id": 0,
+      "schema": {
+        "minimum": 0,
+        "maximum": 255,
+        "type": "number",
+        "x-ctype": "uint8_t",
+        "x-units": ""
+      }
+    },  
+    {
+      "name": "temperature",
+      "summary": "Temperature in hundreths of degree C",
+      "x-id": 1,
+      "schema": {
+        "minimum": -32768,
+        "maximum": 32768,
+        "type": "number",
+        "x-ctype": "uint16_t",
+        "x-units": "0.00 C"
+      }
+    },
+    {
+      "name": "magnet",
+      "summary": "magnet state",
+      "x-id": 2,
+      "schema": {
+        "type": "boolean",
+        "x-ctype": "uint8_t",
+        "x-units": "C"
+      }
+    },
+    {
+      "name": "movement",
+      "summary": "magnet state",
+      "x-id": 3,
+      "schema": {
+        "type": "boolean",
+        "x-ctype": "uint8_t",
+        "x-units": ""
+      }
+    },
+    {
+      "name": "alarmHighTempState1",
+      "summary": "alarmHighTempState1",
+      "x-id": 4,
+      "schema": {
+        "minimum": -32768,
+        "maximum": 32768,
+        "type": "number",
+        "x-ctype": "int16_t",
+        "x-units": "0.00 C"
+      }
+    },
+    {
+      "name": "alarmHighTempState2",
+      "summary": "alarmHighTempState2",
+      "x-id": 5,
+      "schema": {
+        "minimum": -32768,
+        "maximum": 32768,
+        "type": "number",
+        "x-ctype": "int16_t",
+        "x-units": "0.00 C"
+      }
+    },
+    {
+      "name": "alarmHighTempClear",
+      "summary": "alarmHighTempClear",
+      "x-id": 6,
+      "schema": {
+        "minimum": -32768,
+        "maximum": 32768,
+        "type": "number",
+        "x-ctype": "int16_t",
+        "x-units": "0.00 C"
+      }
+    },
+
+    {
+      "name": "alarmLowTempState1",
+      "summary": "alarmLowTempState1",
+      "x-id": 7,
+      "schema": {
+        "minimum": -32768,
+        "maximum": 32768,
+        "type": "number",
+        "x-ctype": "int16_t",
+        "x-units": "0.00 C"
+      }
+    },
+    {
+      "name": "alarmLowTempState2",
+      "summary": "alarmLowTempState2",
+      "x-id": 8,
+      "schema": {
+        "minimum": -32768,
+        "maximum": 32768,
+        "type": "number",
+        "x-ctype": "int16_t",
+        "x-units": "0.00 C"
+      }
+    },
+    {
+      "name": "alarmLowTempClear",
+      "summary": "alarmLowTempClear",
+      "x-id": 9,
+      "schema": {
+        "minimum": -32768,
+        "maximum": 32768,
+        "type": "number",
+        "x-ctype": "int16_t",
+        "x-units": "0.00 C"
+      }
+    },
+    {
+      "name": "alarmDeltaTemp",
+      "summary": "alarmDeltaTemp",
+      "x-id": 10,
+      "schema": {
+        "minimum": -32768,
+        "maximum": 32768,
+        "type": "number",
+        "x-ctype": "int16_t",
+        "x-units": "0.00 C"
+      }
+    },
+    {
+      "name": "batteryGood",
+      "summary": "batteryGood",
+      "x-id": 12,
+      "schema": {
+        "minimum": 0,
+        "maximum": 65536,
+        "type": "number",
+        "x-ctype": "uint16_t",
+        "x-units": "mv"
+      }
+    },
+    {
+      "name": "advertiseOnButton",
+      "summary": "advertiseOnButton",
+      "x-id": 13,
+      "schema": {
+        "minimum": 0,
+        "maximum": 65536,
+        "type": "number",
+        "x-ctype": "uint16_t",
+        "x-units": "mv"
+      }
+    },
+    {
+      "name": "batteryBad",
+      "summary": "batteryBad",
+      "x-id": 16,
+      "schema": {
+        "minimum": 0,
+        "maximum": 65536,
+        "type": "number",
+        "x-ctype": "uint16_t",
+        "x-units": "mv"
+      }
+    },
+    {
+      "name": "resetReason",
+      "summary": "resetReason",
+      "x-id": 17,
+      "schema": {
+        "minimum": 0,
+        "maximum": 65536,
+        "type": "number",
+        "x-ctype": "uint16_t",
+        "x-units": "mv"
+      }
+    }
+  ]
+}

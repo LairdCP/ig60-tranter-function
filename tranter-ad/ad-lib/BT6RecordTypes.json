@@ -1,0 +1,297 @@
+{
+  "recordTypes": [
+    {
+      "name": "reserved",
+      "summary": "reserved type",
+      "x-id": 0,
+      "schema": {
+        "minimum": 0,
+        "maximum": 255,
+        "type": "number",
+        "x-ctype": "uint8_t",
+        "x-units": ""
+      }
+    },
+    {
+      "name": "batteryGood",
+      "summary": "Voltage at which the battery good alarm was triggered",
+      "x-id": 12,
+      "schema": {
+        "minimum": 0,
+        "maximum": 4,
+        "type": "number",
+        "x-ctype": "uint32_t",
+        "x-units": "millivolts"
+      }
+    },
+    {
+      "name": "batteryBad",
+      "summary": "Voltage at which the battery bad alarm was triggered",
+      "x-id": 16,
+      "schema": {
+        "minimum": 0,
+        "maximum": 4,
+        "type": "number",
+        "x-ctype": "uint32_t",
+        "x-units": "millivolts"
+      }
+    },
+    {
+      "name": "reset",
+      "summary": "Reset Reason: ",
+      "x-id": 17,
+      "schema": {
+        "minimum": 0,
+        "maximum": 4,
+        "type": "number",
+        "x-ctype": "uint32_t"
+      }
+    },
+    {
+      "name": "temperatureResult1",
+      "summary": "Temperature in hundreths of degree C",
+      "x-id": 18,
+      "schema": {
+        "minimum": 0,
+        "maximum": 4,
+        "type": "number",
+        "x-ctype": "float",
+        "x-units": "0.00 C"
+      }
+    },
+    {
+      "name": "temperatureResult2",
+      "summary": "Temperature in hundreths of degree C",
+      "x-id": 19,
+      "schema": {
+        "minimum": 0,
+        "maximum": 4,
+        "type": "number",
+        "x-ctype": "float",
+        "x-units": "0.00 C"
+      }
+    },
+    {
+      "name": "temperatureResult3",
+      "summary": "Temperature in hundreths of degree C",
+      "x-id": 20,
+      "schema": {
+        "minimum": 0,
+        "maximum": 4,
+        "type": "number",
+        "x-ctype": "float",
+        "x-units": "0.00 C"
+      }
+    },
+    {
+      "name": "temperatureResult4",
+      "summary": "Temperature in hundreths of degree C",
+      "x-id": 21,
+      "schema": {
+        "minimum": 0,
+        "maximum": 4,
+        "type": "number",
+        "x-ctype": "float",
+        "x-units": "0.00 C"
+      }
+    },
+    {
+      "name": "analogInput1",
+      "summary": "Analog Input in mV",
+      "x-id": 22,
+      "schema": {
+        "minimum": 0,
+        "maximum": 4,
+        "type": "number",
+        "x-ctype": "float",
+        "x-units": "millivolts"
+      }
+    },
+    {
+      "name": "analogInput2",
+      "summary": "Analog Input in mV",
+      "x-id": 23,
+      "schema": {
+        "minimum": 0,
+        "maximum": 4,
+        "type": "number",
+        "x-ctype": "float",
+        "x-units": "millivolts"
+      }
+    },
+    {
+      "name": "analogInput3",
+      "summary": "Analog Input in mV",
+      "x-id": 24,
+      "schema": {
+        "minimum": 0,
+        "maximum": 4,
+        "type": "number",
+        "x-ctype": "float",
+        "x-units": "millivolts"
+      }
+    },
+    {
+      "name": "analogInput4",
+      "summary": "Analog Input in mV",
+      "x-id": 25,
+      "schema": {
+        "minimum": 0,
+        "maximum": 4,
+        "type": "number",
+        "x-ctype": "float",
+        "x-units": "millivolts"
+      }
+    },
+    {
+      "name": "analogInput1",
+      "summary": "Analog Input in mA",
+      "x-id": 26,
+      "schema": {
+        "minimum": 0,
+        "maximum": 4,
+        "type": "number",
+        "x-ctype": "float",
+        "x-units": "millivolts"
+      }
+    },
+    {
+      "name": "analogInput2",
+      "summary": "Analog Input in mA",
+      "x-id": 27,
+      "schema": {
+        "minimum": 0,
+        "maximum": 4,
+        "type": "number",
+        "x-ctype": "float",
+        "x-units": "millivolts"
+      }
+    },
+    {
+      "name": "analogInput3",
+      "summary": "Analog Input in mA",
+      "x-id": 28,
+      "schema": {
+        "minimum": 0,
+        "maximum": 4,
+        "type": "number",
+        "x-ctype": "float",
+        "x-units": "millivolts"
+      }
+    },
+    {
+      "name": "analogInput4",
+      "summary": "Analog Input in mA",
+      "x-id": 29,
+      "schema": {
+        "minimum": 0,
+        "maximum": 4,
+        "type": "number",
+        "x-ctype": "float",
+        "x-units": "millivolts"
+      }
+    },
+    {
+      "name": "ultrasonic1",
+      "summary": "Distance reading in MM",
+      "x-id": 30,
+      "schema": {
+        "minimum": 0,
+        "maximum": 0,
+        "type": "number",
+        "x-ctype": "float",
+        "x-units": "psi"
+      }
+    },
+    {
+      "name": "pressure1",
+      "summary": "Pressue reading in PSI, the first pin configured for pressure",
+      "x-id": 31,
+      "schema": {
+        "minimum": 0,
+        "maximum": 0,
+        "type": "number",
+        "x-ctype": "float",
+        "x-units": "psi"
+      }
+    },
+    {
+      "name": "pressure2",
+      "summary": "Pressue reading in PSI, the second pin configured for pressure",
+      "x-id": 32,
+      "schema": {
+        "minimum": 0,
+        "maximum": 0,
+        "type": "number",
+        "x-ctype": "float",
+        "x-units": "psi"
+      }
+    },
+    {
+      "name": "temperatureAlarms",
+      "summary": "Thermistor Alarm bitmask: 0: high1-1, 1: high2-1, 2: low1-1, 3: low2-1, 4: delta-1...",
+      "x-id": 33,
+      "schema": {
+        "minimum": 0,
+        "maximum": 0,
+        "type": "number",
+        "x-ctype": "uint32_t"
+      }
+    },
+    {
+      "name": "analogAlarms",
+      "summary": "Analog Alarm bitmask: 0: high1-1, 1: high2-1, 2: low1-1, 3: low2-1, 4: delta-1...",
+      "x-id": 34,
+      "schema": {
+        "minimum": 0,
+        "maximum": 0,
+        "type": "number",
+        "x-ctype": "uint32_t"
+      }
+    },
+    {
+      "name": "digitalAlarms",
+      "summary": "Digital Alarm bitmask: 0: input1, 1: input2",
+      "x-id": 35,
+      "schema": {
+        "minimum": 0,
+        "maximum": 0,
+        "type": "number",
+        "x-ctype": "uint32_t"
+      }
+    },
+    {
+      "name": "qrtcLastSet",
+      "summary": "Timestamp when QRTC set occured",
+      "x-id": 36,
+      "schema": {
+        "minimum": 0,
+        "maximum": 0,
+        "type": "number",
+        "x-ctype": "uint32_t"
+      }
+    },
+    {
+      "name": "resetReason2",
+      "summary": "Reset Reason: 0: power up, 1: reset pin, 2: watchdog, 3: software request, 4: cpu lock-up, 6: low power",
+      "x-id": 37,
+      "schema": {
+        "minimum": 0,
+        "maximum": 10,
+        "type": "number",
+        "x-ctype": "uint32_t"
+      }
+    },
+    {
+      "name": "tamperSwitchStatus",
+      "summary": "1 = Tamper switch active (not pressed) \n0 = Tamper switch inactive (pressed).",
+      "x-id": 38,
+      "schema": {
+        "minimum": 0,
+        "maximum": 0,
+        "type": "number",
+        "x-ctype": "uint32_t"
+      }
+    }
+  ]
+}

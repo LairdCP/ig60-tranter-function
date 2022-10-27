@@ -1,0 +1,12 @@
+{
+  "name": "ig60-tranter-function",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "func start",
+    "test": "echo \"No tests yet...\""
+  },
+  "dependencies": {
+    "binary-parser": "^2.2.1"
+  }
+}
