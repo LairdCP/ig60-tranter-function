@@ -56,42 +56,46 @@ module.exports = function (context, IoTHubMessages) {
     IoTHubMessages.forEach(message => {
       let ads;
       try {
-        ads = JSON.parse(message);
+        message = JSON.parse(message);
       } catch (error) {
         console.error(error)
-      }
-
-      if (!ads) {
         return;
       }
 
-      // convert the nested arrays to an array of objects
-      jsonAds.push(...ads.map((a) => {
-        return {
-          mac: a[0],
-          bytes: a[1],
-          rssi: a[2],
-          type: a[3]
-        }
-      }));
+      if ('igState' in message) {
+        // handle ig sensor state
+        console.log(message)
+      } else {
+        // convert the nested arrays to an array of objects
+        jsonAds.push(...ads.map((a) => {
+          return {
+            mac: a[0],
+            bytes: a[1],
+            rssi: a[2],
+            type: a[3]
+          }
+        }));
 
-      context.log(`Processed message: ${message}`);
+        context.log(`Processed message: ${message}`);
+      }
     });
 
-    // decode all the advertisements to the JSON schema
-    const DecodedAds = adLib.decodeAds('1', jsonAds);
+    if (jsonAds) {
+      // decode all the advertisements to the JSON schema
+      const DecodedAds = adLib.decodeAds('1', jsonAds);
 
-    DecodedAds.forEach((ad) => {
-      // decode the flags byte
-      ad.decodedFlags = adLib.decodeFlags(
-        ad.thingTypeName,
-        ad.flags
-      );
+      DecodedAds.forEach((ad) => {
+        // decode the flags byte
+        ad.decodedFlags = adLib.decodeFlags(
+          ad.thingTypeName,
+          ad.flags
+        );
 
-      // identify the record type (reading)
-      ad.record = adLib.getRecordFromAd(ad);
+        // identify the record type (reading)
+        ad.record = adLib.getRecordFromAd(ad);
 
-    })
-    console.log(DecodedAds);
+      })
+      console.log(DecodedAds);
+    }
     context.done();
 };
