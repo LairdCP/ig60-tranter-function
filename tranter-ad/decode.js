@@ -1,3 +1,12 @@
+/*
+
+Run this file at the command line with the following arguments:
+node decode <path to json file>
+
+will print out the decoded ads and write them to a file with a timestamp
+
+*/
+
 const fs = require('fs');
 const adLib = require("./ad-lib");
 
