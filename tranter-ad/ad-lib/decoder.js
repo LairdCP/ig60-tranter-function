@@ -1,6 +1,6 @@
 const Parser = require("binary-parser").Parser;
 
-let OneMPhyResponse = new Parser()
+let BTXXX_1M_PHY_AD_PROTOCOL_ID = new Parser()
   .endianess("little")
   .seek(2)
   // .uint8('length')
@@ -28,8 +28,9 @@ let OneMPhyResponse = new Parser()
       return this.nameLength - 1;
     },
   });
+let RESERVED_AD_PROTOCOL_ID = BTXXX_1M_PHY_AD_PROTOCOL_ID;
 
-let CodedPhy = new Parser()
+let BTXXX_CODED_PHY_AD_PROTOCOL_ID = new Parser()
   .endianess("little")
   .uint16("productId")
   .array("firmwareVersion", {
@@ -89,9 +90,9 @@ const RepeatedAdParser = new Parser()
   .choice("protocolData", {
     tag: "protocolId",
     choices: {
-      80: OneMPhyResponse, // legacy BT510
-      81: OneMPhyResponse,
-      82: CodedPhy,
+      80: BTXXX_1M_PHY_AD_PROTOCOL_ID, // legacy BT510
+      81: BTXXX_1M_PHY_AD_PROTOCOL_ID,
+      82: BTXXX_CODED_PHY_AD_PROTOCOL_ID,
     },
   });
 const AdParser = new Parser()
@@ -125,13 +126,33 @@ const AdParser = new Parser()
   .choice("protocolData", {
     tag: "protocolId",
     choices: {
-      0: OneMPhyResponse, // legacy BT510
-      1: OneMPhyResponse,
-      2: CodedPhy,
+      0: RESERVED_AD_PROTOCOL_ID, // legacy BT510
+      1: BTXXX_1M_PHY_AD_PROTOCOL_ID,
+      2: BTXXX_CODED_PHY_AD_PROTOCOL_ID,
+      // 3: BTXXX_1M_PHY_RSP_PROTOCOL_ID,
+      // 4: RS1XX_BOOTLOADER_AD_PROTOCOL_ID,
+      // 5: RS1XX_BOOTLOADER_RSP_PROTOCOL_ID,
+      // 6: RS1XX_SENSOR_AD_PROTOCOL_ID,
+      // 7: RS1XX_SENSOR_RSP_PROTOCOL_ID,
+      // 8: BTXXX_DM_1M_PHY_AD_PROTOCOL_ID,
+      // 9: BTXXX_DM_CODED_PHY_AD_PROTOCOL_ID,
+      // 10: BTXXX_DM_ENC_CODED_PHY_AD_PROTOCOL_ID,
+      // 11: BTXXX_DM_1M_PHY_RSP_PROTOCOL_ID
     },
+    defaultChoice: new Parser()
+      .string("hexData", {
+        encoding: "hex",
+        greedy: true,
+    }),
   });
+  
 
 const postProcessAd = (ad) => {
+  console.log(ad);
+  if (ad.hexData) {
+    return ad;
+  }
+
   for (let k in ad.protocolData) {
     ad[k] = ad.protocolData[k];
   }

@@ -67,7 +67,7 @@ module.exports = function (context, IoTHubMessages) {
         console.log(message)
       } else {
         // convert the nested arrays to an array of objects
-        jsonAds.push(...ads.map((a) => {
+        jsonAds.push(...message.map((a) => {
           return {
             mac: a[0],
             bytes: a[1],
@@ -76,7 +76,7 @@ module.exports = function (context, IoTHubMessages) {
           }
         }));
 
-        context.log(`Processed message: ${message}`);
+        console.log(`Processed message: ${jsonAds.length}`);
       }
     });
 
